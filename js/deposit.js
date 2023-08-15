@@ -3,13 +3,19 @@ document.getElementById('deposit-btn').addEventListener('click',function(){
 
     const  userDepositField = document.getElementById('user-deposit');
     const userDepositValue = userDepositField.value;
-    const userDeposiAmount = parseFloat(userDepositValue)
+    const userDepositAmount = parseFloat(userDepositValue)
 
+    // if(isNaN(userDepositAmount)){
+    //     alert('Empty input')
+    // }
     const depositAmount = document.getElementById('deposit-amount');
     const depositAmountValue = depositAmount.innerText;
     const currentDepositAmount = parseFloat(depositAmountValue);
 
-    const depositAmountTotal = currentDepositAmount + userDeposiAmount;
+    if(isNaN(userDepositAmount)){
+        alert('Empty input')
+    }
+    const depositAmountTotal = currentDepositAmount + userDepositAmount;
 
     depositAmount.innerText = depositAmountTotal;
 
@@ -17,9 +23,9 @@ document.getElementById('deposit-btn').addEventListener('click',function(){
     const totalAmountValue = totalAmount.innerText;
     const totalAmountBalance = parseFloat(totalAmountValue);
 
-    const totalCurretBalance = userDeposiAmount + totalAmountBalance;
+    const totalCurrentBalance = userDepositAmount + totalAmountBalance;
 
-    totalAmount.innerText = totalCurretBalance;
+    totalAmount.innerText = totalCurrentBalance;
 
     userDepositField.value = '';
 
